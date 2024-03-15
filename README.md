@@ -1,2 +1,2 @@
-# Medical-Services---API
+# Medical-Services-API
 Node.js project
