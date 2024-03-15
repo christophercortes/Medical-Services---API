@@ -1,0 +1,51 @@
+{
+    "community_health_center": {
+        "name": "CESFAM San Antonio",
+        "street": "Lucia Subercaseaux",
+        "number": "116",
+        "city": "San Antonio",
+        "phoneNumber": "800-500-521"
+    }, 
+     "community_health_center2": {
+        "name": "CESFAM Barrancas",
+        "street": "Barros Luco",
+        "number": "2370",
+        "city": "San Antonio",
+        "phoneNumber": "35-220-6610"
+    }, 
+     "community_health_center3": {
+        "name": "CESFAM Cartagena",
+        "street": "Av. Cartagena",
+        "number": "123",
+        "city": "Cartagena",
+        "phoneNumber": "35-220-0300"
+    }, 
+     "community_health_center4": {
+        "name": "CESFAM Rocas de Santo Domingo",
+        "street": "Las Hortensias",
+        "number": "146",
+        "city": "Rocas de Santo Domingo",
+        "phoneNumber": "35-220-4500"
+    }, 
+     "community_health_center5": {
+        "name": "CESFAM Salud Rural El Tabo",
+        "street": "Av. San Marcos",
+        "number": "729",
+        "city": "El Tabo",
+        "phoneNumber": "44-235-1300"
+    }, 
+     "community_health_center6": {
+        "name": "CESFAM El Quisco",
+        "street": "Av. Isidoro Dubournais",
+        "number": "250",
+        "city": "El Quisco",
+        "phoneNumber": "800-913-049"
+    }, 
+      "community_health_center7": {
+        "name": "CESFAM Algarrobo",
+        "street": "Carabineros de Chile",
+        "number": "2350",
+        "city": "Algarrobo",
+        "phoneNumber": "44-357-9701"
+    }
+}
