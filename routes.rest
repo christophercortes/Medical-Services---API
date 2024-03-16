@@ -13,13 +13,13 @@ Content-Type: application/json
 {
     "name": "CESFAM LLo-Lleo",
     "street": "Arzobispo Casanova",
-    "number": "255",
+    "number": "25555555",
     "city": "Llolleo",
     "phoneNumber": "800-500-505"
 }
 
 ### PUT services
-PUT http://localhost:3000/community_health_centers/65f4de2c973e8f76d5f92554
+PUT http://localhost:3000/community_health_centers/65f4fae91a5612ebcfbf0c4d
 Content-Type: application/json
 
 {
@@ -31,6 +31,7 @@ Content-Type: application/json
 }
 
 ### DELETE services
-DELETE http://localhost:3000/community_health_centers/
+DELETE http://localhost:3000/community_health_centers/65f4edaf23bf2b47253a4c75 HTTP/1.1
+Content-Type: application/json
 
 // PRODUCTION
