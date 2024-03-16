@@ -13,25 +13,24 @@ Content-Type: application/json
 {
     "name": "CESFAM LLo-Lleo",
     "street": "Arzobispo Casanova",
-    "number": "25555555",
-    "city": "Llolleo",
-    "phoneNumber": "800-500-505"
-}
-
-### PUT services
-PUT http://localhost:3000/community_health_centers/65f4fae91a5612ebcfbf0c4d
-Content-Type: application/json
-
-{
-    "name": "Nuevo CESFAM LLo-Lleo",
-    "street": "Arzobispo Casanova",
     "number": "255",
     "city": "Llolleo",
     "phoneNumber": "800-500-505"
 }
 
+### PUT services
+PUT http://localhost:3000/community_health_centers/65f5bb819e03d5d17dc38eeb
+
+{
+    "name": "Nuevo CESFAM LLo-Lleo",
+    "street": "Arzobispo Casanova",
+    "number": "25555",
+    "city": "Llolleo",
+    "phoneNumber": "800-500-505"
+}
+
 ### DELETE services
-DELETE http://localhost:3000/community_health_centers/65f4edaf23bf2b47253a4c75 HTTP/1.1
+DELETE http://localhost:3000/community_health_centers/65f5bb819e03d5d17dc38eeb HTTP/1.1
 Content-Type: application/json
 
 // PRODUCTION
