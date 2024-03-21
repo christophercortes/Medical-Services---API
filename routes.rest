@@ -19,18 +19,18 @@ Content-Type: application/json
 }
 
 ### PUT services
-PUT http://localhost:3000/community_health_centers/65f5bb819e03d5d17dc38eeb
+PUT http://localhost:3000/community_health_centers/65fc88c8686effdaad8b6702
 
 {
     "name": "Nuevo CESFAM LLo-Lleo",
-    "street": "Arzobispo Casanova",
+    "street": "Casanova",
     "number": "25555",
-    "city": "Llolleo",
+    "city": "Llo-lleo",
     "phoneNumber": "800-500-505"
 }
 
 ### DELETE services
-DELETE http://localhost:3000/community_health_centers/65f5bb819e03d5d17dc38eeb HTTP/1.1
+DELETE http://localhost:3000/community_health_centers/65fc88c8686effdaad8b6702 HTTP/1.1
 Content-Type: application/json
 
 // PRODUCTION Deploy
