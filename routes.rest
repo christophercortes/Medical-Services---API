@@ -67,3 +67,6 @@ Content-Type: application/json
 
 ### DELETE service
 DELETE https://medical-services-api.onrender.com/community_health_centers/65f4ae4b3903e26362b5e43a HTTP/1.1
+
+### SWAGGER
+GET http://localhost:3000/api-docs/
