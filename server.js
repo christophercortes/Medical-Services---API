@@ -12,11 +12,13 @@ const port = process.env.PORT || 3000;
 
 app
   .use(bodyParser.json())
-  .use(session({
-    secret: "secret",
-    resave: false,
-    saveUninitialized: true,
-  }))
+  .use(
+    session({
+      secret: "secret",
+      resave: false,
+      saveUninitialized: true,
+    })
+  )
   // This is the basic express session({..}) initialization.
   .use(passport.initialize())
   // init passport on every route call.
@@ -35,18 +37,21 @@ app
     next();
   })
   .use(cors({ methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"] }))
-  .use(cors({origin: "*"}))
+  .use(cors({ origin: "*" }))
   .use("/", require("./routes/index"));
 
-passport.use(new GitHubStrategy({
-  clientID: process.env.GITHUB_CLIENT_ID,
-  clientSecret: process.env.GITHUB_CLIENT_SECRET,
-  callbackURL: process.env.CAllBACK_URL
-},
-  function (accessToken, refreshToken, profile, done) {
-    return done(null, profile);
-  }
-));
+passport.use(
+  new GitHubStrategy(
+    {
+      clientID: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      callbackURL: process.env.CAllBACK_URL,
+    },
+    function (accessToken, refreshToken, profile, done) {
+      return done(null, profile);
+    }
+  )
+);
 
 passport.serializeUser((user, done) => {
   done(null, user);
@@ -56,16 +61,24 @@ passport.deserializeUser((user, done) => {
 });
 
 app.get("/", (req, res) => {
-  res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.displayName}` : "Logged Out")
+  res.send(
+    req.session.user !== undefined
+      ? `Logged in as ${req.session.user.displayName}`
+      : "Logged Out"
+  );
 });
 
-app.get("/github/callback", passport.authenticate("github", {
-  failureRedirect: "/api-docs", session: false
-}),
+app.get(
+  "/github/callback",
+  passport.authenticate("github", {
+    failureRedirect: "/api-docs",
+    session: false,
+  }),
   (req, res) => {
     req.session.user = req.user;
     res.redirect("/");
-  });
+  }
+);
 
 // process.on("uncaughtException", (err, origin) => {
 //   console.log(

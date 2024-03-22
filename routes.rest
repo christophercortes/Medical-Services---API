@@ -29,7 +29,7 @@ POST http://localhost:3000/medical_services
 Content-Type: application/json
 
 {
-     "name": "Hospital Carlos Van Buren",
+    "name": "Hospital Carlos Van Buren",
     "street": "San Ignacio",
     "number": "725",
     "city": "Valparaiso",

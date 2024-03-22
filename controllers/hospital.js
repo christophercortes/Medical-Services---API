@@ -38,7 +38,7 @@ const createHospital = async (req, res) => {
     .getDatabase()
     .db()
     .collection("hospitals")
-    .isertOne(service);
+    .insertOne(service);
   if (response.acknowledged) {
     res.status(201).json(response);
   } else {
