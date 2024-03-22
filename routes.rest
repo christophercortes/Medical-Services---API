@@ -71,6 +71,9 @@ Content-Type: application/json
 ### GET all services 
 GET https://medical-services-api.onrender.com/community_health_centers
 
+### GET all Medical Services
+GET https://medical-services-api.onrender.com/medical_services
+
 ### GET services by ID 
 GET https://medical-services-api.onrender.com/community_health_centers/65f4ae163903e26362b5e439
 
