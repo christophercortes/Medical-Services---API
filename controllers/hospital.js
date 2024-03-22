@@ -1,21 +1,24 @@
 const mongodb = require("../data/database");
 const ObjectId = require("mongodb").ObjectId;
 
-
-const getAll = async (req, res) => {
-  const result = await mongodb.getDatabase().db().collection("community_health_centers").find();
+const getAllHospital = async (req, res) => {
+  const result = await mongodb
+    .getDatabase()
+    .db()
+    .collection("hospitals")
+    .find();
   result.toArray().then((lists) => {
     res.setHeader("Content-Type", "application/json");
     res.status(200).json(lists);
   });
 };
 
-const getSingle = async (req, res) => {
+const getHospital = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDatabase()
     .db()
-    .collection("community_health_centers")
+    .collection("hospitals")
     .find({ _id: userId });
   result.toArray().then((lists) => {
     res.setHeader("Content-Type", "application/json");
@@ -23,8 +26,7 @@ const getSingle = async (req, res) => {
   });
 };
 
-
-const createServices = async (req, res) => {
+const createHospital = async (req, res) => {
   const service = {
     name: req.body.name,
     street: req.body.street,
@@ -35,8 +37,8 @@ const createServices = async (req, res) => {
   const response = await mongodb
     .getDatabase()
     .db()
-    .collection("community_health_centers")
-    .insertOne(service);
+    .collection("hospitals")
+    .isertOne(service);
   if (response.acknowledged) {
     res.status(201).json(response);
   } else {
@@ -48,7 +50,7 @@ const createServices = async (req, res) => {
   }
 };
 
-const updateServices = async (req, res) => {
+const updateHospital = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json("Must use a valid serive id to update a service.");
   }
@@ -63,7 +65,7 @@ const updateServices = async (req, res) => {
   const response = await mongodb
     .getDatabase()
     .db()
-    .collection("community_health_centers")
+    .collection("hospitals")
     .replaceOne({ _id: serviceId }, service);
   console.log(response);
   if (response.modifiedCount > 0) {
@@ -77,12 +79,12 @@ const updateServices = async (req, res) => {
   }
 };
 
-const deleteServices = async (req, res) => {
+const deleteHospital = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const response = await mongodb
     .getDatabase()
     .db()
-    .collection("community_health_centers")
+    .collection("hospitals")
     .deleteOne({ _id: userId });
   if (response.deleteCount > 0) {
     res.status(204).send();
@@ -93,11 +95,4 @@ const deleteServices = async (req, res) => {
   }
 };
 
-
-module.exports = {
-  getAll,
-  getSingle,
-  createServices,
-  updateServices,
-  deleteServices,
-};
+module.exports = { getAllHospital, getHospital, createHospital, updateHospital, deleteHospital };
